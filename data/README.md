@@ -10,9 +10,9 @@ In this work, we focue on the metro ridership prediction from 5:30 - 23:30. Spec
 ```
 Therefore, each day can be splitted to 66 time slices. 
 
-#### Data Organization
+### Data Organization
 For each dataset, we release six pkl fiels.
-1. Metro Ridership
+### Metro Ridership
 ```
 T = the sample numebr of time slices
 N = the numebr of metro stations
@@ -31,7 +31,7 @@ test.pkl: the test set. Its data organization is similar to that of the train se
 ```
 This means that we use x[i] to predict y[i].
 
-2. Graph Information
+### Graph Information
 ```
 graph_**_conn.pkl: the physical graph of metro
 graph_**_sml.pkl : the similarity graph of metro  
