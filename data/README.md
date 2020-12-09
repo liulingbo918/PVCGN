@@ -10,31 +10,33 @@ In this work, we focue on the metro ridership prediction from 5:30 - 23:30. Spec
 ```
 Therefore, each day can be splitted to 66 time slices. 
 
-### Data Organization
-For each dataset, we release six pkl fiels.
-1. Metro Ridership
+For each dataset, we release six pkl fiels, three for metro ridership data and three for metor graph information.
+### Metro Ridership
+In our work, each dataset is divided into training set, validation set and testing set.
+
+* **train.pkl:** the training set. It is a dict that consists of 4 ndarray: 
 ```
+(1) x: the metro ridership (inflow/outflow) of previous four time intervals. Its shape is [T, n, N, D]. 
+(2) y: the metro ridership (inflow/outflow) of next     four time intervals. Its shape is [T, m, N, D]. 
+(3) xtime: the timestamps of x. Its shape is [T, n]. 
+(4) ytime: the timestamps of y. Its shape is [T, m].
+
 T = the sample numebr of time slices
 N = the numebr of metro stations
 n = the length of input sequence,  i.e, 4 time intervals in our work
 m = the length of output sequence, i.e, 4 time intervals in our work
 D = the data dimension of each station, i.e, 2 (inflow/outflow) in our work
 ```
-
-* **train.pkl:** the train set. It is a dict that consists of 4 ndarray: 
-```
-(1) x: the metro ridership (inflow/outflow) of previous four time intervals, thus its shape is [T, n, N, D]. 
-(2) y: the metro ridership (inflow/outflow) of next     four time intervals, thus its shape is [T, m, N, D]. 
-(3) xtime: the timestamps of x. Its shape is [T, n]. 
-(4) ytime: the timestamps of y. Its shape is [T, m]. 
-```
 * **val.pkl:**  the val set. Its data organization is similar to that of the train set.
-* **test.pkl:** the test set. Its data organization is similar to that of the train set.
+* **test.pkl:** the testing set. Its data organization is similar to that of the train set.
 
-This means that we use x[i] to predict y[i].
+For each time slice, we use x[i] to predict y[i].  
+In SHMetro dataset, the ridership data of 62 days is used for training, thus the shape[0] of x is 62*66=4092.
+
+In our work, sequence lengths ```n``` and ```m``` are uniformly set to 4. Actually, you can adopt other lengths by reorganizing our data.
 
 
-2. Graph Information
+### Graph Information
 * **graph_conn.pkl**: the physical graph of metro
 * **graph_sml.pkl**: the similarity graph of metro  
 * **graph_conn.pkl**: the correlation graph of metro
