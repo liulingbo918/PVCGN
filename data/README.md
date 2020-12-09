@@ -32,7 +32,8 @@ D = the data dimension of each station, i.e, 2 (inflow/outflow) in our work
 
 For each time slice, we use x[i] to predict y[i].
 In the SHMetro dataset, the ridership data of 62 days is used for training, thus the shape[0] of x is 62x66=4092.
-In our work, sequence lengths ```n``` and ```m``` are uniformly set to 4. Actually, you can adopt other lengths by reorganizing our data.
+
+In our work, sequence lengths ```n``` and ```m``` are uniformly set to 4. You can also adopt other lengths by reorganizing our data.
 
 ### 2.Graph Information
 * **graph_conn.pkl**: the physical graph of metro
