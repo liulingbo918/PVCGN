@@ -8,9 +8,7 @@ In this work, we focue on the metro ridership prediction from 5:30 - 23:30. Spec
 21:15-22:15 -- forecast -> 22:15-23:15
 21:30-22:30 -- forecast -> 22:30-23:30
 ```
-Therefore, each day can be splitted to 66 time slices. 
-
-For each dataset, we release six pkl fiels, three for metro ridership data and three for metor graph information.
+Therefore, each day can be splitted to 66 time slices. For each dataset, we release six pkl fiels, three for metro ridership data and three for metor graph information.
 ### Metro Ridership
 In our work, each dataset is divided into training set, validation set and testing set.
 
