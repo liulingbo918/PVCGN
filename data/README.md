@@ -9,7 +9,7 @@ In this work, we focue on the metro ridership prediction from 5:30 - 23:30. Spec
 21:30-22:30 -- forecast -> 22:30-23:30
 ```
 Therefore, each day can be splitted to 66 time slices. For each dataset, we release six pkl fiels, three for metro ridership data and three for metor graph information.
-##### 1. Metro Ridership
+### 1. Metro Ridership
 In our work, each dataset is divided into training set, validation set and testing set.
 
 * **train.pkl:** the training set. It is a dict that consists of 4 ndarray: 
@@ -34,7 +34,7 @@ In SHMetro dataset, the ridership data of 62 days is used for training, thus the
 In our work, sequence lengths ```n``` and ```m``` are uniformly set to 4. Actually, you can adopt other lengths by reorganizing our data.
 
 
-##### 2. Graph Information
+### 2. Graph Information
 * **graph_conn.pkl**: the physical graph of metro
 * **graph_sml.pkl**: the similarity graph of metro  
 * **graph_conn.pkl**: the correlation graph of metro
